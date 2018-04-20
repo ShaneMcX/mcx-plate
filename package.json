@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.4",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-scripts": "1.1.4"
   },
   "scripts": {
+    "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -19,7 +22,10 @@
   },
   "eslintConfig": {
     "parser": "babel-eslint",
-    "extends": ["airbnb", "plugin:prettier/recommended"],
+    "extends": [
+      "airbnb",
+      "plugin:prettier/recommended"
+    ],
     "eslintIgnore": [
       "server/**/*.js",
       "internals/**/*.js",
@@ -32,7 +38,11 @@
       "jest": true,
       "es6": true
     },
-    "plugins": ["redux-saga", "react", "jsx-a11y"],
+    "plugins": [
+      "redux-saga",
+      "react",
+      "jsx-a11y"
+    ],
     "parserOptions": {
       "ecmaVersion": 6,
       "sourceType": "module",
@@ -41,10 +51,19 @@
       }
     },
     "rules": {
-      "arrow-parens": ["error", "as-needed"],
-      "arrow-body-style": [2, "as-needed"],
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
+      "arrow-body-style": [
+        2,
+        "as-needed"
+      ],
       "class-methods-use-this": 0,
-      "comma-dangle": [2, "always-multiline"],
+      "comma-dangle": [
+        2,
+        "always-multiline"
+      ],
       "import/imports-first": 0,
       "import/newline-after-import": 0,
       "import/no-dynamic-require": 0,
@@ -67,7 +86,10 @@
       "no-use-before-define": 0,
       "prefer-template": 2,
       "react/forbid-prop-types": 0,
-      "react/jsx-first-prop-new-line": [2, "multiline"],
+      "react/jsx-first-prop-new-line": [
+        2,
+        "multiline"
+      ],
       "react/jsx-filename-extension": 0,
       "react/jsx-no-target-blank": 0,
       "react/require-default-props": 0,
@@ -76,7 +98,10 @@
       "redux-saga/no-yield-in-race": 2,
       "redux-saga/yield-effects": 2,
       "require-yield": 0,
-      "semi": ["error", "never"]
+      "semi": [
+        "error",
+        "never"
+      ]
     },
     "settings": {
       "import/resolver": {
@@ -87,7 +112,9 @@
     }
   },
   "stylelint": {
-    "extends": ["stylelint-config-standard"],
+    "extends": [
+      "stylelint-config-standard"
+    ],
     "rules": {
       "rule-empty-line-before": null,
       "declaration-block-semicolon-newline-after": null
@@ -99,5 +126,11 @@
     "singleQuote": true,
     "trailingComma": "es5",
     "jsxBracketSameLine": false
-  }
+  },
+   "lint-staged": {
+     "src/**/*.{js,jsx,json,css}": [
+       "prettier --write",
+       "git add"
+     ]
+   }
 }
