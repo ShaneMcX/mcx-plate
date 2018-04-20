@@ -7,7 +7,11 @@
     "lint-staged": "^7.0.4",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4"
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0"
   },
   "scripts": {
     "precommit": "lint-staged",
@@ -128,10 +132,10 @@
     "trailingComma": "es5",
     "jsxBracketSameLine": false
   },
-   "lint-staged": {
-     "src/**/*.{js,jsx,json,css}": [
-       "prettier --write",
-       "git add"
-     ]
-   }
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }
